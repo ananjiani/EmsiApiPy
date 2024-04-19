@@ -17,9 +17,10 @@ class USInputOutputConncetion(EmsiBaseConnection):
         token (str): the Oauth 2.0 token
     """
 
-    def __init__(self) -> None:
+    def __init__(self, username, password) -> None:
         """Summary"""
-        super().__init__()
+
+        super().__init__(username=username, password=password)
         self.base_url = "https://io.emsicloud.com/"
         self.scope = "us-io"  # todo: add more scopes for other nations
 

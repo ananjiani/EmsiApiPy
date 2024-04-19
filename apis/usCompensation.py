@@ -18,10 +18,10 @@ class UsCompensationConnection(EmsiBaseConnection):
         limit_reset (TYPE): Description
     """
 
-    def __init__(self) -> None:
+    def __init__(self, username, password) -> None:
         """Summary"""
 
-        super().__init__()
+        super().__init__(username=username, password=password)
         self.base_url = "https://comp.emsicloud.com/"
         self.scope = "emsiauth"
 

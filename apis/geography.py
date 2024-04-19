@@ -16,8 +16,10 @@ class GeographyConnection(EmsiBaseConnection):
         token (str): auth token received from the OAuth server
     """
 
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, username, password) -> None:
+        """Summary"""
+
+        super().__init__(username=username, password=password)
         self.base_url = "https://emsiservices.com/gis/v1/"
         self.scope = "gis"
 

@@ -638,8 +638,10 @@ class TalentBenchmarkConnection(EmsiBaseConnection):
         token (str): the auth token received from the auth API
     """
 
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, username, password) -> None:
+        """Summary"""
+
+        super().__init__(username=username, password=password)
         self.base_url = "https://emsiservices.com/benchmark/"
         self.scope = "benchmark"
 

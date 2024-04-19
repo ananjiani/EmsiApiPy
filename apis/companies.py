@@ -16,9 +16,10 @@ class CompaniesConnection(EmsiBaseConnection):
         scope (str): scope used to request access from the OAuth server
     """
 
-    def __init__(self) -> None:
+    def __init__(self, username, password) -> None:
         """Summary"""
-        super().__init__()
+
+        super().__init__(username=username, password=password)
         self.base_url = "https://emsiservices.com/companies/"
         self.scope = "companies"
 

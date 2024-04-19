@@ -16,9 +16,10 @@ class JobTitleMappingConnection(EmsiBaseConnection):
         token (str): auth token received from the OAuth server
     """
 
-    def __init__(self) -> None:
-        """Create the connection"""
-        super().__init__()
+    def __init__(self, username, password) -> None:
+        """Summary"""
+
+        super().__init__(username=username, password=password)
         self.base_url = "https://emsiservices.com/jtm/"
         self.scope = "jtm"
 

@@ -8,11 +8,6 @@ from datetime import timedelta
 import pandas as pd
 import requests
 
-try:
-    from ..permissions import DEFAULT
-except ValueError:  # need this for testing
-    from permissions import DEFAULT
-
 
 class Token:
     def __init__(self, token):
@@ -36,12 +31,22 @@ class EmsiBaseConnection:
     scope = ""
     base_url = ""
     name = ""
+    username = ""
+    password = ""
 
-    def __init__(self) -> None:
+    def __init__(self, username, password) -> None:
         """
-        Parses the username and password from the permissions
+        Initialize the EmsiBaseConnection object.
+
+        Args:
+            username (str): The username for accessing the API.
+            password (str): The password for accessing the API.
+
+        Returns:
+            None
         """
-        self.username, self.password = DEFAULT["username"], DEFAULT["password"]
+        self.username = username
+        self.password = password
 
     def get_new_token(self) -> None:
         """Creates a new access token for connecting to the API
