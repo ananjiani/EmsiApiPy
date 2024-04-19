@@ -99,7 +99,7 @@ class CoreLMIConnection(EmsiBaseConnection):
 
         super().__init__()
         self.base_url = "https://agnitio.emsicloud.com/"
-        self.scope = "emsiauth"
+        self.scope = "agnitio"
 
         self.get_new_token()
         self.limiter = Limiter()
