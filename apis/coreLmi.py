@@ -264,7 +264,7 @@ class CoreLMIConnection(EmsiBaseConnection):
         """
         response = self.post_retrieve_data(dataset, payload, datarun)
         df = pd.DataFrame()
-        for column in response["data"]:
-            df[column["name"]] = column["rows"]
+        data_dict = {column["name"]: column["rows"] for column in response["data"]}
+        df = pd.DataFrame(data_dict)
 
         return df
