@@ -1,2 +1,20 @@
-[tool.black]
-line-length = 79
+[tool.poetry]
+name = "emsiapipy"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "GNU GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.2"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+pandas-stubs = "^2.2.1.240316"
+pytest = "^8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
